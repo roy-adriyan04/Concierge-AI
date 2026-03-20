@@ -78,11 +78,5 @@ The application will be available at `http://localhost:5173`.
 | :---: | :---: |
 | ![Pipeline](file:///C:/Users/adrde/.gemini/antigravity/brain/c5b2d4de-5ced-466d-a965-a1feb0ab8934/pipelines_page_initial_1774041973418.png) | ![Heatmap](file:///C:/Users/adrde/.gemini/antigravity/brain/c5b2d4de-5ced-466d-a965-a1feb0ab8934/media__1774041535139.png) |
 
----
-
-## 📄 License
-Distributed under the MIT License.
-
----
-*Created with ❤️ by Concierge AI Development Team*
+--
 
