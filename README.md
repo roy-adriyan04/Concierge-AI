@@ -1,82 +1,79 @@
-# Concierge AI — The Digital Curator
+# Concierge AI — AI Interview Scheduler
 
-[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
-[![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-[![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white)](https://www.framer.com/motion/)
+> **Live demo → [concierge-ai.live](https://roy-adriyan04.github.io/Concierge-AI/)**
 
-**Concierge AI** is a professional-grade, AI-powered interview management and scheduling system. It transforms the complex, manual process of coordinating panels and candidates into a seamless, automated experience with a premium "Digital Curator" aesthetic.
+Hiring teams waste 4–6 hours per candidate just coordinating interview slots across panel schedules. Concierge AI eliminates that entirely — paste in availability, get the top 3 conflict-free slots ranked by AI, and send calendar invites in one click.
 
----
-
-## ✨ Key Features
-
-### 📅 Intelligent Scheduling Engine
-- **Conflict Resolution**: Automatically detects overlaps between candidate and interviewer availability.
-- **Availability Heatmap**: A sophisticated visual density analysis tool to identify optimal windows.
-- **Curated Recommendations**: Recommends the top 3 ranked slots based on panel alignment and candidate preference.
-
-### 📊 Dynamic Kanban Pipeline
-- **Recruitment Cycle Tracking**: Manage candidates through **New Applications**, **Screening**, and **Interview Scheduled** stages.
-- **Real-time Status Sync**: Candidate cards automatically update with confirmed interview details upon scheduling.
-- **AI Match Confidence**: Visual badges showing the AI-calculated fit for each role.
-
-### 🔒 Workspace Integration
-- **Google Workspace Ready**: Native integration with **Google Calendar** for event creation and **Gmail** for automated invite delivery.
-- **Meet Links**: Automatically generates and attaches Google Meet links to all interview invites.
-- **OAuth 2.0 Secure Auth**: Enterprise-standard authentication flow.
-
-### 🎨 Premium Recruiter Experience
-- **Digital Curator UI**: A sleek, high-fidelity dark mode with glassmorphism, smooth animations, and interactive state management.
-- **Workspace Settings**: Centralized management for account profile, team roles, and API configuration.
+Built with React + Google Workspace APIs. n8n automation backend in active development.
 
 ---
 
-## 🛠️ Tech Stack
+## The problem
 
-- **Frontend**: React 18, Vite
-- **Styling**: Tailwind CSS, CSS Glassmorphism
-- **Animations**: Framer Motion
-- **APIs**: Google Calendar API, Gmail API, Google Identity Services (OAuth2)
-- **Utilities**: `clsx`, `tailwind-merge`, `material-symbols`
+Scheduling a single interview round requires:
+- Collecting availability from 3–5 panelists
+- Cross-referencing against the candidate's slots
+- Checking for calendar conflicts manually
+- Sending invites and Meet links individually
+
+For a team interviewing 10+ candidates a week, this is a part-time job.
 
 ---
 
-## ⚙️ Getting Started
+## What Concierge AI does
 
-### 1. Clone & Install
+- **AI slot ranking** — scores available windows by panel alignment and candidate preference
+- **Conflict detection** — automatically surfaces overlaps before they happen  
+- **Availability heatmap** — visual density map of optimal interview windows
+- **One-click scheduling** — creates Google Calendar events + Meet links + Gmail invites
+- **Candidate pipeline** — Kanban board tracking applicants from application to scheduled
+
+---
+
+## Tech stack
+
+| Layer | Tech |
+|---|---|
+| Frontend | React 18, Vite |
+| Styling | Tailwind CSS, Framer Motion |
+| Auth | Google OAuth 2.0 |
+| APIs | Google Calendar API, Gmail API |
+| Automation (WIP) | n8n |
+
+---
+
+## Status
+
+- [x] Frontend UI complete and deployed
+- [x] Google OAuth + Calendar + Gmail integration
+- [x] AI slot ranking + conflict detection
+- [ ] n8n workflow automation backend (in progress)
+- [ ] Beta user onboarding (target: April 2026)
+
+---
+
+## Run locally
 ```bash
-git clone https://github.com/your-username/interview-scheduler.git
-cd interview-scheduler
+git clone https://github.com/roy-adriyan04/Concierge-AI.git
+cd Concierge-AI
 npm install
 ```
 
-### 2. Configure Environment Variables
-Create a `.env.local` file in the root directory:
-```env
-VITE_GOOGLE_CLIENT_ID=your_google_client_id.apps.googleusercontent.com
-VITE_GOOGLE_API_KEY=your_google_api_key
+Create `.env.local`:
 ```
-
-### 3. Google API Setup
-- Enable **Google Calendar API** and **Gmail API** in your Google Cloud Console.
-- Configure the **OAuth Consent Screen** and add your testing emails as "Test Users".
-- Set authorized redirect URIs to `http://localhost:5173`.
-
-### 4. Run Development Server
+VITE_GOOGLE_CLIENT_ID=your_client_id
+VITE_GOOGLE_API_KEY=your_api_key
+```
 ```bash
 npm run dev
 ```
 
-The application will be available at `http://localhost:5173`.
+---
+
+## Screenshots
+
+*Coming soon — Loom demo video in progress*
 
 ---
 
-## 📸 Screenshots
-
-| Candidate Pipeline | Scheduling Intelligence |
-| :---: | :---: |
-| ![Pipeline](file:///C:/Users/adrde/.gemini/antigravity/brain/c5b2d4de-5ced-466d-a965-a1feb0ab8934/pipelines_page_initial_1774041973418.png) | ![Heatmap](file:///C:/Users/adrde/.gemini/antigravity/brain/c5b2d4de-5ced-466d-a965-a1feb0ab8934/media__1774041535139.png) |
-
---
-
+Built by [Adriyan Roy](https://linkedin.com/in/adriyan-roy) · New Delhi, India
